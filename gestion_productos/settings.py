@@ -114,8 +114,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# WhiteNoise: comprime y cachea estáticos en producción
+# WhiteNoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_ROOT = BASE_DIR / 'staticfiles'
 
 # ─────────────────────────────────────────────
 #  ARCHIVOS MEDIA (imágenes de productos)
@@ -141,6 +142,6 @@ MESSAGE_TAGS = {
 # Seguridad extra en producción
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = False
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
