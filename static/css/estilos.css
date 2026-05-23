@@ -1,0 +1,75 @@
+/* ── Variables ── */
+:root {
+    --color-primary: #0d6efd;
+    --sidebar-bg: #f8f9fa;
+}
+
+/* ── General ── */
+body {
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── Navbar ── */
+.navbar-brand {
+    font-size: 1.2rem;
+    letter-spacing: 0.3px;
+}
+
+/* ── Cards ── */
+.card {
+    border-radius: 0.75rem;
+}
+
+/* ── Tablas ── */
+.table th {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* ── Badges de estado ── */
+.badge {
+    font-weight: 500;
+    font-size: 0.78rem;
+    padding: 0.35em 0.65em;
+}
+
+/* ── Botones de acción en tabla ── */
+.btn-group .btn {
+    padding: 0.25rem 0.5rem;
+}
+
+/* ── Formularios ── */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+/* ── Tarjetas del dashboard ── */
+.card .rounded-circle {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ── Footer ── */
+footer {
+    font-size: 0.85rem;
+}
+
+/* ── Alertas ── */
+.alert {
+    border-radius: 0.6rem;
+    border: none;
+}

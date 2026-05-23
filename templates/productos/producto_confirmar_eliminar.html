@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Eliminar Producto — Gestión de Productos{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm border-top border-danger border-3">
+            <div class="card-body p-4 text-center">
+                <div class="mb-3">
+                    <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size:3rem;"></i>
+                </div>
+                <h4 class="fw-bold">¿Eliminar producto?</h4>
+                <p class="text-muted">
+                    Estás por eliminar <strong>{{ producto.nombre }}</strong>.
+                    Esta acción no se puede deshacer.
+                </p>
+
+                <div class="card bg-light border-0 mb-4 text-start">
+                    <div class="card-body py-2">
+                        <small class="text-muted">Precio:</small> <strong>${{ producto.precio }}</strong><br>
+                        <small class="text-muted">Stock:</small> <strong>{{ producto.stock }}</strong><br>
+                        {% if producto.categoria %}
+                        <small class="text-muted">Categoría:</small> <strong>{{ producto.categoria }}</strong>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <form method="post" class="d-flex gap-2 justify-content-center">
+                    {% csrf_token %}
+                    <a href="{% url 'producto_lista' %}" class="btn btn-outline-secondary">
+                        <i class="bi bi-x-lg me-1"></i>Cancelar
+                    </a>
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash me-1"></i>Sí, eliminar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
