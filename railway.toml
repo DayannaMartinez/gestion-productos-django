@@ -3,7 +3,7 @@ builder = "nixpacks"
 
 [deploy]
 preDeployCommand = "python manage.py migrate --no-input && python manage.py collectstatic --no-input"
-startCommand = "bash start.sh"
+startCommand = "gunicorn gestion_productos.wsgi -c gunicorn.conf.py"
 healthcheckPath = "/"
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
